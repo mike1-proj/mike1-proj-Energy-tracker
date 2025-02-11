@@ -19,3 +19,4 @@ date  time  I1 I2 I3  V1   V2    V3     KW    Hz   Kva    Kvar    col12         
 14967,12000,12,00,00,2335, 00,   00,    07,  500,   00,    00,   00000000,      00,   00
 
 However, I need some reliable actual three phase .DAT files to finalise what some of the last headings should be
+so now I have uploaded a three phase EAAP6ATV .dat file for kennedy college new ross that  I can use to see how deltrax uses the data to produce a report.
