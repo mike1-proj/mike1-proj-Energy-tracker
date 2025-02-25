@@ -8,7 +8,7 @@ import datetime
 import pandas as pd
 from datetime import datetime
 pd.set_option("display.max_columns", None)
-df = pd.read_csv('EAAP6ATV.DAT', delimiter=',', skiprows=6)
+df = pd.read_csv('KennedyEAAP6ATV.DAT', delimiter=',', skiprows=6)
 # we skipped the first six rows in the .DAT file as it contained no useful header information, and we create our own
 # header names for the columns based on the original Deltrax Excel export report format which looked like this:
 # Date	Time	I1	I2	I3	KW	KVA	KVAR	PF	AV_VOLTS	In	V1	V2	V3	Hz	Pulse: (these are the final column names in the exported report)
