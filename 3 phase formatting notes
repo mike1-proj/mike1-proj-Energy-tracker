@@ -8,3 +8,8 @@ is used for both the single phase report and the three phase report and the Delt
 calculations and adds them into the three phase report as extra columns.
 The Energy tracker display shows it can display Volts (123), Amps (123), Kw,PF,Kva,Kvar, col12(TBD),Time,date and pulse
 That is 14. however the actual Excel report produces a sheet with 16 columns.
+
+the actual column headings in the excel report are:
+Date	Time	I1	I2	I3	KW	KVA	KVAR	PF	AV_VOLTS	In	V1	V2	V3	Hz	Pulse
+this is the exact sequence of columns we would want in our final report export.
+as we have seen above, AV_Volts value is a derived value calculated by the Deltrax soft ware.
