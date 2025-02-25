@@ -4,16 +4,20 @@ a typical row of data is like so:
 
 Data:
 14967,12000,12,00,00,2335,00,00,07,500,00,00,00000000,00,00
+this data came from a file E8046ITV.DAT
 
 there are no column headings in the raw file but there are more columns than is required for a single phase deltrax
-report output and less than is required for a deltrax 3 phase report. So, its likely the basic raw file with 15 columns
-is used for both the single phase report and the three phase report and the Deltrax software  made some extra
-calculations and added them into the three phase report as extra columns.
-The Energy tracker display shows it can display Volts (123), Amps (123), Kw,PF,Kva,Kvar, col12(TBD),Time,date and pulse
-That is 15
+Excel report output and less than is required for a deltrax 3 phase report. So, its likely the basic raw file with 15 columns
+is used for both the single phase report and the three phase report and the Deltrax software  makes some extra
+calculations and adds them into the three phase report export as extra columns.
 
-original raw export .DAT column headings should probably be as follows:
+The Energy tracker display shows it can display Volts (123), Amps (123), Kw,PF,Kva,Kvar,Time,date and pulse
+That is 13 so obviously some values in Excel report are derived by the software calculation.
 
+original raw export .DAT column headings for the single phase Excel report come out as follows in the excel report export:
+Date	Time	I1	KW	KVA	KVAR	PF	In	V1	Hz	Pulse
+so the final excel report for single phase ignores some of the column values that  are not needed (eg V2, V3 etc)
+Below I show a full fifteen column row content under the headings that  would apply if it were a three phase
 Data:
 date  time  I1 I2 I3  V1   V2    V3     KW    Hz   Kva    Kvar    col12         PF  pulse
 14967,12000,12,00,00,2335, 00,   00,    07,  500,   00,    00,   00000000,      00,   00
