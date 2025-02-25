@@ -1,1 +1,2 @@
-
+Avg volts column  values are calculated inside original  Deltax software for the excel report. it is not a value listed in the raw data file but derived from it by adding the three phase voltages
+and then taking the average and multiplying it by the square root of 3. this gives the Avg Volys value seen in the exported excel file.
