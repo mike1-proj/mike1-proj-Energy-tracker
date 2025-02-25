@@ -1,2 +1,10 @@
 Avg volts column  values are calculated inside original  Deltax software for the excel report. it is not a value listed in the raw data file but derived from it by adding the three phase voltages
 and then taking the average and multiplying it by the square root of 3. this gives the Avg Volys value seen in the exported excel file.
+
+
+there are no column headings in the raw file but there are more columns than is required for a single phase deltrax
+report output and less than is required for a deltrax 3 phase report. So, its likely the basic raw file with 15 columns
+is used for both the single phase report and the three phase report and the Deltrax software  makes some extra
+calculations and adds them into the three phase report as extra columns.
+The Energy tracker display shows it can display Volts (123), Amps (123), Kw,PF,Kva,Kvar, col12(TBD),Time,date and pulse
+That is 14. however the actual Excel report produces a sheet with 16 columns.
