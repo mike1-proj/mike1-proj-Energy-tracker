@@ -6,8 +6,9 @@ there are no column headings in the raw file but there are more columns than is 
 report output and less than is required for a deltrax 3 phase report. So, its likely the basic raw file with 15 columns
 is used for both the single phase report and the three phase report and the Deltrax software  makes some extra
 calculations and adds them into the three phase report as extra columns.
-The Energy tracker display shows it can display Volts (123), Amps (123), Kw,PF,Kva,Kvar, col12(TBD),Time,date and pulse
-That is 14. However the actual Excel report produces a sheet with 16 columns.
+The Energy tracker display shows it can display Volts (123), Amps (123), Kw,PF,Kva,Kvar,Hz,Time,date and pulse
+That is 14. However the actual Excel report produces a sheet with 16 columns. One of these extra columns is the nuetral current value
+another is the Average three phase volts value. This accounts for the 16 columns in the report. (not sure yet where is calculates this nuetral  current) 
 
 the actual column headings in the finished Deltrax excel report are:
 Date	Time	I1	I2	I3	KW	KVA	KVAR	PF	AV_VOLTS	In	V1	V2	V3	Hz	Pulse
@@ -18,12 +19,13 @@ Data:
 15004,6450,74,20,93,842,824,834,442,173,240,88,00000001,00,00
 15004,6600,192,76,249,2430,2383,2414,1231,500,625,206,00000001,00,00
 15004,6750,139,35,370,2431,2372,2398,1281,500,15,400,00000001,00,00
-The first line is from start up and can look a bit odd. the rest of the rows are more stable values. it is notable that column 13 contains a value
-this value does not appear  in a single phase version of the .DAT file. it is usually just a series of zeros. mnore on that later.
+The first line is from start up and can look a bit odd. The rest of the rows are more stable values. it is notable that column 13 contains a value
+which does not appear  in a single phase version of the .DAT file. it is usually just a series of zeros. Mnore on that later.
 if we simply transpose a sample of the raw columns under the excel report headings we get this:
 Date	Time	I1	I2	I3	KW	KVA	KVAR	PF	AV_VOLTS	In	V1	V2	V3	Hz	Pulse
 15004,6600, 192,76,249,2430,2383,2414,1231,500,625,206,00000001,00,00
-we can see that the original Deltrax software re positions some of the raw data column data in the final report. so our final DF will need to be configured to match the expected excel output
+we can see that the original Deltrax software re positions some of the raw data column data values in the final report. The phase volatge values appear in a different place.
+So our final DF will need to be configured to match the expected excel output
 or else we can create a new format once we understand how the original report calculates everything. we are not stuck with the priginal format
 I would suggest  that  we create our DF column headings to match  as close as possible to the actual way the values appear in the raw.DAT file.
 
