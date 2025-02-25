@@ -9,8 +9,8 @@ there are no column headings in the raw file but there are more columns than is 
 report output and less than is required for a deltrax 3 phase report. So, its likely the basic raw file with 15 columns
 is used for both the single phase report and the three phase report and the Deltrax software  made some extra
 calculations and added them into the three phase report as extra columns.
-The Energy tracker display shows it can display Volts (123), Amps (123), Kw,PF,Kva,Kvar,Time,date and pulse
-That is 14
+The Energy tracker display shows it can display Volts (123), Amps (123), Kw,PF,Kva,Kvar, col12(TBD),Time,date and pulse
+That is 15
 
 original raw export .DAT column headings should probably be as follows:
 
@@ -20,3 +20,4 @@ date  time  I1 I2 I3  V1   V2    V3     KW    Hz   Kva    Kvar    col12         
 
 However, I need some reliable actual three phase .DAT files to finalise what some of the last headings should be
 so now I have uploaded a three phase EAAP6ATV .dat file for kennedy college new ross that  I can use to see how deltrax uses the data to produce a report.
+I have also  added a second three phase data file from colaiste an Atha for comparison.
