@@ -13,12 +13,21 @@ the actual column headings in the finished Deltrax excel report are:
 Date	Time	I1	I2	I3	KW	KVA	KVAR	PF	AV_VOLTS	In	V1	V2	V3	Hz	Pulse
 this is the exact sequence of columns we would want in our final report export.
 as we have seen above, AV_Volts value is a derived value calculated by the Deltrax soft ware.
+an actual raw.DAT sample from Kennedy school EAAP6ATV.DAT looks like this:
+Data:
+15004,6450,74,20,93,842,824,834,442,173,240,88,00000001,00,00
+15004,6600,192,76,249,2430,2383,2414,1231,500,625,206,00000001,00,00
+15004,6750,139,35,370,2431,2372,2398,1281,500,15,400,00000001,00,00
+The first line is from start up and can look a bit odd. the rest of the rows are more stable values. it is notable that column 13 contains a value
+this value does not appear  in a single phase version of the .DAT file. it is usually just a series of zeros. mnore on that later.
+if we simply transpose a sample of the raw columns under the excel report headings we get this:
+Date	Time	I1	I2	I3	KW	KVA	KVAR	PF	AV_VOLTS	In	V1	V2	V3	Hz	Pulse
+15004,6600, 192,76,249,2430,2383,2414,1231,500,625,206,00000001,00,00
+we can see that the original Deltrax software re positions some of the raw data column data in the final report. so our final DF will need to be configured to match the expected excel output
+or else we can create a new format once we understand how the original report calculates everything. we are not stuck with the priginal format
+I would suggest  that  we create our DF column headings to match  as close as possible to the actual way the values appear in the raw.DAT file.
 
 
 
-
-
-
-However, I need some reliable actual three phase .DAT files to finalise what some of the last headings should be
 so now I have uploaded a three phase EAAP6ATV .dat file for kennedy college new ross that  I can use to see how deltrax uses the data to produce a report.
 I have also  added a second three phase data file from colaiste an Atha for comparison.
