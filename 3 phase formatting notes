@@ -27,7 +27,8 @@ Date	Time	I1	I2	I3	KW	KVA	KVAR	PF	AV_VOLTS	In	V1	V2	V3	Hz	Pulse
 we can see that the original Deltrax software re positions some of the raw data column data values in the final report. The phase volatge values appear in a different place.
 So our final DF will need to be configured to match the expected excel output
 or else we can create a new format once we understand how the original report calculates everything. we are not stuck with the priginal format
-I would suggest  that  we create our DF column headings to match  as close as possible to the actual way the values appear in the raw.DAT file.
+I would suggest  that  we create our DF column headings to match  as close as possible to the actual way the values appear in the raw.DAT file.However we will need to make space in the sequence for the extra headings that
+the Deltrax excel report produces.
 
 
 
