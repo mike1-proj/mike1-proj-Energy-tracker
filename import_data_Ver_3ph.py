@@ -1,7 +1,7 @@
 """this is a basic code to open a particular 3 phase
 report.DAT format file coming from some software (Deltrax),
 so it can be formatted and cleaned of unnecessary data and rearranged using pandas data frame before
-using it to generate a clean .csv file for use elsewhere. The raw .dat file has several proprietary codes
+using it to generate a clean .csv/Excel file for use elsewhere. The raw .dat file has several proprietary codes
 for date and time as well as scaling of certain values which we will have to unpick through manipulation in the DF
 before it can be used by something other than the original Deltrax software"""
 import datetime
@@ -10,8 +10,9 @@ from datetime import datetime
 pd.set_option("display.max_columns", None)
 df = pd.read_csv('E8046ITV.DAT', delimiter=',', skiprows=6)
 # we skipped the first six rows in the .DAT file as it contained no useful header information, and we create our own
-# header names for the columns (based on the original Deltrax report format)
-df.columns = ['date', 'time', 'I1', 'I2', 'I3', 'KW', 'KVA', 'KVAR', 'col8', 'Hz', 'col10', 'col11', 'col12',
+# header names for the columns (based on the original Deltrax Excel export report format)
+# Date	Time	I1	I2	I3	KW	KVA	KVAR	PF	AV_VOLTS	In	V1	V2	V3	Hz	Pulse: these are the final column names in the exported report
+df.columns = ['date', 'time', 'I1', 'I2', 'I3', 'KW', 'KVA', 'KVAR', 'PF', '', 'col10', 'col11', 'col12',
               'col13', 'col14']
 # change format of 'date' column to be a timedate delta value, so we can use it as part of a calc later
 df['date'] = pd.to_timedelta(df['date'], unit='D')
