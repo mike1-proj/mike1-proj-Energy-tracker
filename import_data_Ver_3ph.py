@@ -14,7 +14,7 @@ df = pd.read_csv('E8046ITV.DAT', delimiter=',', skiprows=6)
 # Date	Time	I1	I2	I3	KW	KVA	KVAR	PF	AV_VOLTS	In	V1	V2	V3	Hz	Pulse: (these are the final column names in the exported report)
 # However the raw .DAT file value sequence is different so we need to set up the sequence in our Data frame column names
 # to follow as closley as possible that sequence for simplicity but take account of the extra columns required for internal calculations needed for the final report in Excel.
-df.columns = ['date', 'time', 'I1', 'I2', 'I3', 'V1', 'V2', 'V3', 'KW', 'Hz', 'KVA', 'KVAR', 'PF', 'col11', 'Ln', 'col11', 'col12',
+df.columns = ['date', 'time', 'I1', 'I2', 'I3', 'V1', 'V2', 'V3', 'KW', 'Hz', 'col11', 'Ln', 'PF', 'KVA', 'KVAR', 'col12',
               'col13', 'col14']
 # change format of 'date' column to be a timedate delta value, so we can use it as part of a calc later
 df['date'] = pd.to_timedelta(df['date'], unit='D')
