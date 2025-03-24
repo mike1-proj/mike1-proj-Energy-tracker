@@ -34,3 +34,5 @@ Date	Time	I1	I2	I3  V1	V2	V3  KW  HZ  Col10  In  PF  Pulse  KVAR  AV_VOLTS
 
 so now I have uploaded a three phase EAAP6ATV .dat file for kennedy college new ross that  I can use to see how deltrax uses the data to produce a report.
 I have also  added a second three phase data file from colaiste an Atha for comparison.
+
+So now the final working version of the 3 phase date reporting tool is import_data_3ph_ver2.py as of 24/03/2025
